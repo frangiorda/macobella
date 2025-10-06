@@ -1,0 +1,99 @@
+/* Contenedor de las 3 tarjetas */
+.cards-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px;
+  padding: 0 16px;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .cards-wrap { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .cards-wrap { grid-template-columns: 1fr; }
+}
+
+/* Tarjeta 3D */
+.flip-card {
+  perspective: 1000px;            /* profundidad para el flip */
+  height: 320px;                   /* alto de la tarjeta */
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;    /* permite caras 3D */
+  transition: transform 0.7s ease;
+}
+
+/* Flip en hover (desktop) y con clase .is-flipped (mobile/click) */
+.flip-card:hover .flip-card-inner,
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Caras */
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;     /* oculta la cara posterior al girar */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Frente: fondo neutro, título centrado */
+.flip-card-front {
+  background: #111;                /* combina con tu navbar */
+  display: grid;
+  place-items: center;
+}
+.flip-card-front h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: .5px;
+  margin: 0 16px;
+  text-align: center;
+}
+
+/* Dorso: imagen de fondo + overlay para legibilidad */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+.flip-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.55));
+}
+.flip-card-content {
+  position: relative;
+  height: 100%;
+  display: grid;
+  gap: 8px;
+  align-content: end;              /* texto hacia abajo */
+  padding: 18px;
+}
+.flip-card-content h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.flip-card-content p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.35;
+}
+
+/* Accesibilidad visual al foco del teclado */
+.flip-card:focus {
+  outline: 3px solid #6aa2ff;
+  outline-offset: 4px;
+}
