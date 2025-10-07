@@ -37,10 +37,9 @@ export default function FlipCards() {
   return (
     <section className="cards-section">
       <div className="cards-header">
-        <h2>Servicios</h2>
-        <p>Tus ideas convertidas en valor</p>
+        <span className="section-eyebrow">NUESTRAS UNIDADES DE NEGOCIO</span>
+        <h2>Se complementan para ofrecer un servicio único:</h2>
       </div>
-
       <div className="cards-wrapper">
         {services.map((s) => {
           const isFlipped = flipped.includes(s.id)
