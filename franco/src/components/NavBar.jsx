@@ -10,10 +10,10 @@ function NavBar() {
           <img src={logoBlanco} alt="Mi Logo" className="logo-img" />
         </div>
         <nav className="nav-links">
-          <a href="#home">Inicio</a>
-          <a href="#about">Servicios</a>
-          <a href="#about">Quiénes Somos</a>
-          <a href="#footer">Contacto</a>
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#quienes-somos">Quiénes Somos</a>
+          <a href="#contacto">Contacto</a>
         </nav>
       </div>
     </header>

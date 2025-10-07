@@ -45,3 +45,6 @@
   :root { --nav-h: 64px; }
 }
 
+html {
+  scroll-behavior: smooth;
+}

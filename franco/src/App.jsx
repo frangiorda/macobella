@@ -12,11 +12,19 @@ function App() {
     <div className="page">   {/* <- clave */}
       <NavBar />
       <main>
-        <Carousel />
+        <section id="inicio">
+          <Carousel />
+        </section>
+        <section id="servicios">
         <Card />  
+        </section>
+        <section id="quienes-somos">
         <About />
+        </section>
       </main>
+      <section id="contacto">
       <Footer theme="dark" />
+      </section>
     </div>
   );
 }
