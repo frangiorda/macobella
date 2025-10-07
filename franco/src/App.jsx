@@ -4,22 +4,21 @@ import Footer from "./components/Footer.jsx";
 import Carousel from "./components/Carousel.jsx";
 import Card from "./components/Card.jsx";
 import About from "./components/About.jsx";
-import "./App.css";
-import "./index.css";
+
 
 function App() {
   return (
-    <div className="page">   {/* <- clave */}
+    <div className="page">   
       <NavBar />
       <main>
         <section id="inicio">
           <Carousel />
         </section>
-        <section id="servicios">
-        <Card />  
+        <section id="servicios" className="my-5">
+          <Card />
         </section>
         <section id="quienes-somos">
-        <About />
+          <About />
         </section>
       </main>
       <section id="contacto">

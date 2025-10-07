@@ -4,24 +4,24 @@ import "../css/card.css"
 const services = [
   {
     id: 1,
-    title: "Comercialización de Desarrollos",
-    teaser: "Descubre la propiedad de tus sueños",
+    title: "Conceptualización y Diseños de Desarrollo",
+    teaser: "Experiencia, visión y coherencia en cada desarrollo",
     detail:
-      "Explora propiedades seleccionadas, programa visitas y recibe orientación personalizada con información basada en datos y apoyo dedicado de agentes.",
+      "La conceptualización y diseño de desarrollos en Macobella se basan en nuestra experiencia de integrar visión estratégica, análisis territorial y sensibilidad estética, transformando ideas en productos inmobiliarios coherentes, funcionales y con identidad propia, donde cada proyecto refleja el equilibrio entre contexto, demanda y esencia del lugar.",
   },
   {
     id: 2,
-    title: "Venta de Particulares",
-    teaser: "Maximiza el valor de tu propiedad",
+    title: "Comercialización de Desarrollos",
+    teaser: "Estrategia, confianza y vínculos que perdurab",
     detail:
-      "Acompañamos cada operación con transparencia y asesoramiento personalizado",
+      " La comercialización de desarrollos en Macobella combina estrategia, conocimiento profundo del producto y comunicación efectiva para posicionar cada proyecto con precisión. Nuestra experiencia garantiza procesos transparentes y un enfoque integral que transforma a los clientes en verdaderos embajadores de la marca.",
   },
   {
     id: 3,
-    title: "Conceptualización y Diseños de Desarrollo",
-    teaser: "Transforma ideas en realidad",
+    title: "Venta de Particulares",
+    teaser: "Profesionalismo, confianza y valor en cada operación",
     detail:
-      "Transformamos ideas en proyectos inmobiliarios sólidos y atractivos",
+      "La venta de propiedades particulares en Macobella se basa en un asesoramiento personalizado y un verdadero conocimiento del producto. Aplicamos nuestra experiencia en desarrollos para destacar cada inmueble, maximizando su valor y brindando una experiencia de venta profesional, transparente y orientada a resultados.",
   },
 ]
 

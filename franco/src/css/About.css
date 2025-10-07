@@ -1,5 +1,5 @@
 .quienes-section {
-  background: #BF4827; /* gris muy claro, sutil contraste */
+  background: #ededf2; /* gris muy claro, sutil contraste */
   padding: 5rem 1rem;
 }
 
@@ -24,11 +24,11 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
-  color: #ffffff; /* casi negro */
+  color: #000000; /* casi negro */
 }
 
 .quienes-text p {
-  color: #ffffff; /* slate-600 */
+  color: #0c0b0b; /* slate-600 */
   line-height: 1.7;
   font-size: 1.05rem;
   margin-bottom: 1rem;
