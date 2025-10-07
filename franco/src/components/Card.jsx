@@ -1,74 +1,77 @@
-import { useState } from "react";
-import "./../css/Card.css";
+import { useState } from "react"
+import "../css/card.css"
 
-// Importá tus imágenes (usé las que vi en tu carpeta)
-import casa from "../assets/casa.jpg";
-import golf from "../assets/golf.webp";
-import house from "../assets/house.jpeg";
+const services = [
+  {
+    id: 1,
+    title: "Comercialización de Desarrollos",
+    teaser: "Descubre la propiedad de tus sueños",
+    detail:
+      "Explora propiedades seleccionadas, programa visitas y recibe orientación personalizada con información basada en datos y apoyo dedicado de agentes.",
+  },
+  {
+    id: 2,
+    title: "Venta de Particulares",
+    teaser: "Maximiza el valor de tu propiedad",
+    detail:
+      "Acompañamos cada operación con transparencia y asesoramiento personalizado",
+  },
+  {
+    id: 3,
+    title: "Conceptualización y Diseños de Desarrollo",
+    teaser: "Transforma ideas en realidad",
+    detail:
+      "Transformamos ideas en proyectos inmobiliarios sólidos y atractivos",
+  },
+]
 
-function CardItem({ title, text, img }) {
-  const [flipped, setFlipped] = useState(false);
+export default function FlipCards() {
+  const [flipped, setFlipped] = useState([])
 
-  const toggle = () => setFlipped(v => !v);
+  const toggle = (id) => {
+    setFlipped((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    )
+  }
 
   return (
-    <div
-      className={`flip-card ${flipped ? "is-flipped" : ""}`}
-      onClick={toggle}               // tap/click para mobile
-      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && toggle()}
-      role="button"
-      tabIndex={0}
-      aria-pressed={flipped}
-    >
-      <div className="flip-card-inner">
-        {/* Front */}
-        <div className="flip-card-face flip-card-front">
-          <h3>{title}</h3>
-        </div>
-
-        {/* Back */}
-        <div
-          className="flip-card-face flip-card-back"
-          style={{ backgroundImage: `url(${img})` }}
-        >
-          <div className="flip-card-overlay" />
-          <div className="flip-card-content">
-            <h4>{title}</h4>
-            <p>{text}</p>
-          </div>
-        </div>
+    <section className="cards-section">
+      <div className="cards-header">
+        <h2>Servicios</h2>
+        <p>Tus ideas convertidas en valor</p>
       </div>
-    </div>
-  );
-}
 
-export default function Card() {
-  const items = [
-    {
-      title: "Casa moderna",
-      text:
-        "Ambientes luminosos, materiales nobles y eficiente en energía. Ideal para familias jóvenes.",
-      img: casa,
-    },
-    {
-      title: "Barrio con golf",
-      text:
-        "Acceso a amenities premium, seguridad 24/7 y naturaleza. Perfecto para vida tranquila.",
-      img: golf,
-    },
-    {
-      title: "Clásica renovada",
-      text:
-        "Restaurada a nuevo respetando su esencia. Lista para mudarte y disfrutar.",
-      img: house,
-    },
-  ];
+      <div className="cards-wrapper">
+        {services.map((s) => {
+          const isFlipped = flipped.includes(s.id)
+          return (
+            <div
+              key={s.id}
+              className="flip-card"
+              onClick={() => toggle(s.id)}
+              onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && toggle(s.id)}
+              role="button"
+              tabIndex={0}
+              aria-label={`${s.title} – click to flip`}
+            >
+              <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
+                {/* Frente */}
+                <div className="flip-card-face flip-card-front">
+                  <div className="front-content">
+                    <h3>{s.title}</h3>
+                    <p className="teaser">{s.teaser}</p>
+                  </div>
+                </div>
 
-  return (
-    <section className="cards-wrap">
-      {items.map((it) => (
-        <CardItem key={it.title} {...it} />
-      ))}
+                {/* Dorso (sin botón) */}
+                <div className="flip-card-face flip-card-back">
+                  <p className="detail">{s.detail}</p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </section>
-  );
+  )
 }

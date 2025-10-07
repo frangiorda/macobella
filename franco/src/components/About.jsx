@@ -1,27 +1,31 @@
-import "./../css/About.css";
-import aboutImg from "../assets/golf.webp";
+import "../css/about.css"
 
 export default function About() {
   return (
-    <section id="about" className="section section--alt">
-      <div className="container about">
-        <div className="about-image">
-          <img src={aboutImg} alt="Nuestro espacio" />
-        </div>
-        <div className="about-text">
+    <section id="quienes-somos" className="quienes-section">
+      <div className="quienes-container">
+        <div className="quienes-text">
           <h2>Quiénes Somos</h2>
           <p>
-            Somos un club que combina naturaleza, confort y excelencia deportiva.
-            Desde nuestros inicios, nos propusimos crear un espacio donde cada
-            visitante pueda vivir experiencias únicas rodeado de paisajes
-            excepcionales.
+            Somos un equipo especializado en el mercado inmobiliario, con una visión
+            integral que combina experiencia, innovación y compromiso. Acompañamos a
+            nuestros clientes en cada etapa del proceso, generando confianza a través
+            de un enfoque profesional y transparente.
           </p>
           <p>
-            Nuestra misión es brindar servicios de primer nivel, fomentando la
-            comunidad y el disfrute en cada rincón de nuestras instalaciones.
+            Nos destacamos por brindar soluciones a medida para particulares,
+            desarrolladores y empresas, impulsando proyectos sólidos y relaciones de
+            largo plazo.
           </p>
+        </div>
+
+        <div className="quienes-image">
+          <img
+            src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80"
+            alt="Nuestro equipo"
+          />
         </div>
       </div>
     </section>
-  );
+  )
 }
