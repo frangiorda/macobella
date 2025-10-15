@@ -1,6 +1,6 @@
-import familia from '../assets/familia.png';
-import masterplan from '../assets/masterplan.png';
-import lotes from '../assets/lotes.png';
+import familia from '../assets/familia.webp';
+import masterplan from '../assets/masterplan.webp';
+import lotes from '../assets/lotes.webp';
 
 export default function CarouselHero() {
   const NAVBAR_HEIGHT = 70;
