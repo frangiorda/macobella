@@ -1,0 +1,131 @@
+/* ====== BASE ====== */
+.footer {
+  --bg: #0f0f12;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e9e9ee;
+  --muted: #a7a7ad;
+  --icon: #d0d0d6;
+  --icon-hover: #ffffff;
+
+  width: 100%;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  padding: 60px 30px;
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ====== IZQUIERDA ====== */
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+.footer-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ====== DERECHA ====== */
+.footer-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem; /* separación entre “Contáctanos” y “Seguinos” */
+  flex-wrap: wrap;
+}
+
+/* Cada bloque (contacto / redes) */
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Título de sección */
+.footer-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Contacto */
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 15px;
+}
+.footer-contact .icon {
+  color: var(--icon);
+}
+
+.footer-whatsapp {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-whatsapp:hover {
+  color: #25d366;
+}
+
+/* Redes sociales */
+.footer-social {
+  display: flex;
+  gap: 14px;
+}
+.footer-social a {
+  color: var(--icon);
+  font-size: 20px;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+.footer-social a:hover {
+  color: var(--icon-hover);
+  transform: translateY(-2px);
+}
+
+/* ====== COPYRIGHT ====== */
+.footer-copy {
+  max-width: 1100px;
+  margin: 15px auto 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-block {
+    align-items: center;
+  }
+}
+
+@media (min-width: 701px) {
+  .footer-right { margin-right: 12px; } /* crea un pequeño “colchón” a la derecha */
+}
+ 

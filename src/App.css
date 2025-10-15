@@ -1,0 +1,75 @@
+:root {
+  /* Ajustá esto al alto real de tu NavBar fija */
+  --nav-h: 72px;
+}
+
+/* La página completa */
+.page {
+  height: 100dvh;      /* full viewport, mobile-safe */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* NavBar - Main - Footer */
+}
+
+/* Contenedor scrolleable con snap */
+.snap-container {
+  height: calc(100dvh - var(--nav-h));
+  margin-top: var(--nav-h);           /* dejar espacio por la NavBar fija */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Cada sección ocupa la pantalla visible (menos la NavBar fija) */
+.snap-section {
+  min-height: calc(100dvh - var(--nav-h));
+  scroll-snap-align: start;
+  display: grid;
+  place-items: center; /* centra el contenido (opcional) */
+  padding: 2rem 1rem;
+  /* fondo base */
+  background: #0f0f0f; 
+}
+
+/* Sección alterna para distinguir fácilmente al scrollear */
+.snap-section.alt {
+  background: linear-gradient(180deg, #121212 0%, #1b1b1b 100%);
+}
+
+/* Opcional: sutil sombra entre pantallas */
+.snap-section:not(:first-child) {
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.06) inset;
+}
+
+/* Si tu NavBar cambia de alto en mobile, podés ajustar var(--nav-h) con media queries */
+@media (max-width: 768px) {
+  :root { --nav-h: 64px; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilo base para efecto reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 16px));
+  transition:
+    opacity var(--reveal-duration, 500ms) ease,
+    transform var(--reveal-duration, 500ms) ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accesibilidad: si el usuario prefiere menos animación */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
