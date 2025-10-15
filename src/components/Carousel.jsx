@@ -94,13 +94,13 @@ export default function CarouselHero() {
     {
       img: familia,
       alt: "Familia disfrutando del espacio",
-      title: "Convertimos espacios en estilos de vida",
+      title: "Convertimos espacio en estilo de vida",
       focus: "center",
     },
     {
       img: lotes,
       alt: "Lotes",
-      title: "Ver más allá… experiencia al servicio de tu negocio",
+      title: "Ver más allá… Nuestra experiencia al servicio de tu negocio",
       focus: "center",
     },
   ];
