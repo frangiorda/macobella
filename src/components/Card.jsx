@@ -1,5 +1,5 @@
 import { useState } from "react"
-import "../css/card.css"
+import "../css/Card.css"
 
 const services = [
   {
